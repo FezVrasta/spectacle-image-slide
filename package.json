@@ -1,11 +1,11 @@
 {
   "name": "spectacle-image-slide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Show a slide with a big image and a title on top",
   "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c ./rollup.config.js -i src/index.js -o dist/index.js",
-    "build:docs": "DOCS=true rollup -c ./rollup.config.js -i docs/src/index.jsx -o docs/dist/index.js",
+    "build:docs": "PRODUCTION=true webpack docsrc/index.jsx docs/bundle.js",
     "prepare": "npm run build"
   },
   "repository": "https://github.com/FezVrasta/spectacle-image-slide",

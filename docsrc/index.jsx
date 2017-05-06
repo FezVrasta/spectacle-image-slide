@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Deck } from 'spectacle';
+import { Deck, Slide } from 'spectacle';
 import ImageSlide from '../src/index.js';
 import demo from './demo.gif';
 
@@ -8,7 +8,9 @@ class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={[]} transitionDuration={0} progress="bar">
-        <ImageSlide transition={[]} image={demo} title="ImageSlide demo!" />
+        <Slide transition={[]}>
+          <ImageSlide image={demo} title="ImageSlide demo!" />
+        </Slide>
       </Deck>
     );
   }

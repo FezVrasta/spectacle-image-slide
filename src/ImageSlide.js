@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Slide, Heading, Image } from 'spectacle';
+import { Heading, Image } from 'spectacle';
 
 const fullScreenStyle = {
   display: 'flex',
@@ -27,29 +27,27 @@ export default class ImageSlide extends Component {
   render() {
     const { title, image, titleProps, ...props } = this.props;
     return (
-      <Slide {...props}>
-        <div style={fullScreenStyle}>
-          {!!title &&
-            <div style={{ width: 1000 }}>
-              <Heading
-                size={2}
-                caps
-                lineHeight={1}
-                textColor="secondary"
-                style={{ marginBottom: '.5em' }}
-                {...titleProps}
-              >
-                {title}
-              </Heading>
-            </div>}
-          <div style={{ flex: 1, position: 'relative' }}>
-            <Image
-              style={imageStyle}
-              src={image}
-            />
-          </div>
+      <div style={fullScreenStyle}  {...props}>
+        {!!title &&
+          <div style={{ width: 1000 }}>
+            <Heading
+              size={2}
+              caps
+              lineHeight={1}
+              textColor="secondary"
+              style={{ marginBottom: '.5em' }}
+              {...titleProps}
+            >
+              {title}
+            </Heading>
+          </div>}
+        <div style={{ flex: 1, position: 'relative' }}>
+          <Image
+            style={imageStyle}
+            src={image}
+          />
         </div>
-      </Slide>
+      </div>
     );
   }
   
